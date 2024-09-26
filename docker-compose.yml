@@ -2,12 +2,16 @@ services:
   db:
     image: postgres:14
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:
       - app-network
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
 
   web:
     build: .
@@ -19,10 +23,10 @@ services:
       - "3000:3000"
     depends_on:
       - db
-    environment:
-      DATABASE_URL: postgres://postgres:password@db:5432/postgres
     networks:
       - app-network
+    env_file:
+      - .env
 
 volumes:
   postgres_data:
