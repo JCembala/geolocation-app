@@ -12,11 +12,16 @@ gem 'tzinfo-data', platforms: %i[ jruby ]
 group :development, :test do
   gem 'debug', platforms: %i[ mri ]
   gem 'dotenv-rails'
-  gem 'factory_bot_rails'
-  gem 'rspec-rails', '~> 7.0.0'
 end
 
 group :development do
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
+end
+
+group :test do
+  gem 'factory_bot_rails'
+  gem 'rspec-rails', '~> 7.0.0'
+  gem 'shoulda-matchers'
+  gem 'webmock'
 end
