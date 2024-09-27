@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  # root "posts#index"
+  resources :geolocations, only: %i[create show destroy]
 end
