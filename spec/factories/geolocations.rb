@@ -4,7 +4,7 @@
 FactoryBot.define do
   factory :geolocation do
     network_address { '134.201.250.155' }
-    response {
+    response do
       {
         "ip": '134.201.250.155',
         "hostname": '134.201.250.155',
@@ -21,9 +21,9 @@ FactoryBot.define do
         "longitude": -118.2405,
         "msa": '31100',
         "dma": '803',
-        "radius": null,
-        "ip_routing_type": null,
-        "connection_type": null,
+        "radius": nil,
+        "ip_routing_type": nil,
+        "connection_type": nil,
         "location": {
           "geoname_id": 5_368_361,
           "capital": 'Washington D.C.',
@@ -60,28 +60,28 @@ FactoryBot.define do
           "sld": 'ladwp',
           "tld": 'com',
           "carrier": 'los angeles department of water & power',
-          "home": null,
-          "organization_type": null,
-          "isic_code": null,
-          "naics_code": null
+          "home": nil,
+          "organization_type": nil,
+          "isic_code": nil,
+          "naics_code": nil
         },
         "security": {
           "is_proxy": false,
-          "proxy_type": null,
+          "proxy_type": nil,
           "is_crawler": false,
-          "crawler_name": null,
-          "crawler_type": null,
+          "crawler_name": nil,
+          "crawler_type": nil,
           "is_tor": false,
           "threat_level": 'low',
-          "threat_types": null,
-          "proxy_last_detected": null,
-          "proxy_level": null,
-          "vpn_service": null,
-          "anonymizer_status": null,
+          "threat_types": nil,
+          "proxy_last_detected": nil,
+          "proxy_level": nil,
+          "vpn_service": nil,
+          "anonymizer_status": nil,
           "hosting_facility": false
         }
       }
-    }
+    end
 
     trait :with_url do
       network_address { 'www.example.com' }
